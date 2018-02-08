@@ -6,7 +6,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html lang="en">
 
 @section('htmlheader')
-    @include('admin.layouts.partials.htmlheader')
+@include('admin.layouts.partials.htmlheader')
+
+@yield('header')
 @show
 
 <!--
@@ -56,7 +58,9 @@ desired effect
 </div><!-- ./wrapper -->
 </div>
 @section('scripts')
-    @include('admin.layouts.partials.scripts')
+@include('admin.layouts.partials.scripts')
+
+@yield('scripts')
 @show
 
 </body>

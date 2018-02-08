@@ -29,7 +29,6 @@
         <login-form name="{{ config('auth.providers.users.field','email') }}"
                     domain="{{ config('auth.defaults.domain','') }}"></login-form>
 
-        @include('admin.auth.partials.social_login')
 
         <a href="{{ url('/password/reset') }}">{{ trans('message.forgotpassword') }}</a><br>
         <a href="{{ url('/register') }}" class="text-center">{{ trans('message.registermember') }}</a>

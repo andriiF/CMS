@@ -29,7 +29,6 @@
 
                 <register-form></register-form>
 
-                @include('admin.auth.partials.social_login')
 
                 <a href="{{ url('/login') }}" class="text-center">{{ trans('message.membership') }}</a>
             </div><!-- /.form-box -->
@@ -38,7 +37,6 @@
 
     @include('admin.layouts.partials.scripts_auth')
 
-    @include('admin.auth.terms')
 
 </body>
 

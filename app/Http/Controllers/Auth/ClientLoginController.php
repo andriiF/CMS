@@ -7,16 +7,16 @@ use Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
-class AdminLoginController extends Controller {
+class ClientLoginController extends Controller {
 
     use AuthenticatesUsers;
 
     public function __construct() {
-        $this->middleware('guest:users')->except('logout');
+        $this->middleware('guest:client')->except('logout');
     }
 
     public function showLoginForm() {
-        return view('admin.auth.login');
+        return view('panel.auth.login');
     }
 
     public function login(Request $request) {
@@ -25,11 +25,11 @@ class AdminLoginController extends Controller {
             'password' => 'required',
         ]);
        
-        if (Auth::guard('users')->attempt([
+        if (Auth::guard('users')->attempt([//change
                     'email' => $request->email,
                     'password' => $request->password,
                         ], $request->remember)) {
-            return redirect()->intended(route('admin.home'));
+            return redirect()->intended(route('panel.home'));
         }
         return redirect()->back()->withInput($request->only('email', 'remember'));
     }

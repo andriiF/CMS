@@ -5,8 +5,7 @@
 @endsection
 
 @section('content')
-
-    <body class="hold-transition register-page">
+<body class="hold-transition register-page">
     <div id="app" v-cloak>
         <div class="register-box">
             <div class="register-logo">
@@ -23,7 +22,6 @@
                     </ul>
                 </div>
             @endif
-
             <div class="register-box-body">
                 <p class="login-box-msg">{{ trans('message.registermember') }}</p>
                 <form action="{{ url('/register') }}" method="post">
