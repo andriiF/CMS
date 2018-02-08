@@ -12,14 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.welcome');
 });
+Route::get('/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
-Route::group(['middleware' => 'auth'], function () {
-    //    Route::get('/link1', function ()    {
-//        // Uses Auth Middleware
-//    });
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
 
-    //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
-    #adminlte_routes
 });

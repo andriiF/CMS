@@ -28,9 +28,10 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showLoginForm()
-    {
-        return view('adminlte::auth.login');
+    public function showLoginForm() {
+
+
+        return view('admin.auth.login');
     }
 
     /**
@@ -38,7 +39,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin/home';
 
     /**
      * Create a new controller instance.
